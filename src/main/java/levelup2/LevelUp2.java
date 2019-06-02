@@ -44,7 +44,7 @@ public class LevelUp2 {
         CapabilityManager.INSTANCE.register(IPlayerClass.class, new PlayerCapability.CapabilityPlayerClass<>(), PlayerExtension.class);
         CapabilityManager.INSTANCE.register(IProcessor.class, new PlayerCapability.CapabilityProcessorClass<>(), PlayerCapability.CapabilityProcessorDefault.class);
         MinecraftForge.EVENT_BUS.register(new CapabilityEventHandler());
-        //SkillRegistry.initItems();
+        SkillRegistry.initItems();
         proxy.registerItemMeshes();
     }
 
