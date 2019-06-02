@@ -93,7 +93,7 @@ public class SkillRegistry {
             if (skill.hasSubscription())
                 MinecraftForge.EVENT_BUS.register(skill);
         }
-        //initPlankCache();
+        initPlankCache();
     }
 
     public static void registerRecipes() {
@@ -102,8 +102,8 @@ public class SkillRegistry {
             Library.addToOreList(LevelUpConfig.oreList);
             Library.assignExperienceValues(LevelUpConfig.oreList, LevelUpConfig.oreExperience);
             registerSmelting(LevelUpConfig.oreList, surfaceOreChunk);
-            //registerCrafting(LevelUpConfig.oreList, surfaceOreChunk);
-            //Library.registerOres(LevelUpConfig.oreList);
+            registerCrafting(LevelUpConfig.oreList, surfaceOreChunk);
+            Library.registerOres(LevelUpConfig.oreList);
             if (LevelUpConfig.oreList.contains("oreRedstone"))
                 Library.getOreList().add(Blocks.LIT_REDSTONE_ORE);
         }
@@ -112,16 +112,16 @@ public class SkillRegistry {
             Library.addToOreList(LevelUpConfig.netherOreList);
             Library.assignExperienceValues(LevelUpConfig.netherOreList, LevelUpConfig.netherOreExperience);
             registerSmelting(LevelUpConfig.netherOreList, netherOreChunk);
-            //registerCrafting(LevelUpConfig.netherOreList, netherOreChunk);
-            //Library.registerOres(LevelUpConfig.netherOreList);
+            registerCrafting(LevelUpConfig.netherOreList, netherOreChunk);
+            Library.registerOres(LevelUpConfig.netherOreList);
         }
         if (!isNullList(LevelUpConfig.endOreList)) {
             Library.registerOreToChunk(LevelUpConfig.endOreList, endOreChunk);
             Library.addToOreList(LevelUpConfig.endOreList);
             Library.assignExperienceValues(LevelUpConfig.endOreList, LevelUpConfig.endOreExperience);
             registerSmelting(LevelUpConfig.endOreList, endOreChunk);
-            //registerCrafting(LevelUpConfig.endOreList, endOreChunk);
-            //Library.registerOres(LevelUpConfig.endOreList);
+            registerCrafting(LevelUpConfig.endOreList, endOreChunk);
+            Library.registerOres(LevelUpConfig.endOreList);
         }
         List<String> names = new ArrayList<>();
         if (LevelUpConfig.dupeAllOres) {
