@@ -320,16 +320,16 @@ public class GuiSkills extends GuiScreen {
 
                     if (skills.get(check.getSkillName()) == 0) {
                         GlStateManager.color(0.1F, 0.1F, 0.1F, 1.0F);
-                        //this.itemRender.isNotRenderingEffectsInGUI(false);
+                        this.itemRender.isNotRenderingEffectsInGUI(false);
                     }
                     GlStateManager.disableLighting(); //Forge: Make sure Lighting is disabled. Fixes MC-33065
                     GlStateManager.enableCull();
                     mc.getRenderItem().renderItemAndEffectIntoGUI(check.getRepresentativeStack(), checkX + 4, checkY + 4);
                     GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
-                    GlStateManager.disableLighting();/*
+                    GlStateManager.disableLighting();
                     if (skills.get(check.getSkillName()) == 0) {
                         this.itemRender.isNotRenderingEffectsInGUI(true);
-                    }*/
+                    }
 
                     GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
                     if (xPos >= checkX && xPos <= checkX + 22 && yPos >= checkY && yPos <= checkY + 22) {
